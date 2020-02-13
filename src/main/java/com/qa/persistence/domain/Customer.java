@@ -5,23 +5,27 @@ public class Customer{
 	private long id;
 	private String firstName;
 	private String surname;
-	private String email;
+	
 
 	
-	public Customer(String firstName, String surname, String email) {
+	public Customer(String firstName, String surname ) {
 		this.firstName = firstName;
 		this.surname = surname;
-		this.email=email;
+		
 		
 	}
 
-	public Customer(long id, String firstName, String surname, String email) {
+	public Customer(long id, String firstName, String surname) {
 		this.id = id;
 		this.firstName = firstName;
 		this.surname = surname;
-		this.email=email;
+		
 	}
 	
+
+
+
+
 	public long getId() {
 		return id;
 	}
@@ -47,15 +51,9 @@ public class Customer{
 	}
 	
 	public String toString() {
-		return "\n"+ "Id: " + id + "\n"+ "First name: " + firstName +"\n"+ "Surname: " + surname+"\n"+ "Email: "+email + "\n" + "...................................................." ;
+		return "\n"+ "Id: " + id + "\n"+ "First name: " + firstName +"\n"+ "Surname: " + surname+"\n";
 	}
 
-	public String getEmail() {
-		return email;
-	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 }

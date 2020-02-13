@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qa.ims </groupId>
-  <artifactId>tapiwa-ims</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qa.ims</groupId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+		<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Releases</name>
@@ -39,6 +40,13 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.2.4</version>
+			<scope>test</scope>
 		</dependency>
 		
 
@@ -79,5 +87,8 @@
 			</plugin>
 		</plugins>
 	</build>
-  
+
+
+
+	<artifactId>tapiwa-ims</artifactId>
 </project>
