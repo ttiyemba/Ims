@@ -37,16 +37,11 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		LOGGER.info("Please enter a surname");
 		String surname = Utils.getInput();
 		while(surname.matches(".*\\d.*")) {
-			LOGGER.info("Please enter a surname");
+			LOGGER.info("Please enter a surname"); 
 			surname = Utils.getInput();
 		}
-        LOGGER.info("Please enter your email");
-		String email = Utils.getInput();
-		while(!email.contains("@") || email.indexOf('@')<1) {
-			LOGGER.info("Please enter your email");
-			email = Utils.getInput();
-		}
-		customerService.create(new Customer(firstName, surname, email));
+        
+		customerService.create(new Customer(firstName, surname));
 		
 	}
 	@Override
@@ -67,13 +62,8 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 				LOGGER.info("Please enter the new or currently used surname for update");
 				newOrCurrSurname  = Utils.getInput();
 			}
-			LOGGER.info("Please enter the new or currently used email for update");
-			String newOrCurrEmail = Utils.getInput();
-			while(!newOrCurrEmail.contains("@") || newOrCurrEmail.indexOf('@')<1) {
-				LOGGER.info("Please enter the new or currently used email for update");
-				newOrCurrEmail = Utils.getInput();
-			}
-			customerService.update(custId, new Customer(newOrCurrFirstName, newOrCurrSurname, newOrCurrEmail));
+			
+			customerService.update(custId, new Customer(newOrCurrFirstName, newOrCurrSurname));
 		}
 	
 	}
@@ -91,13 +81,8 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 			LOGGER.info("Please enter a surname");
 			surname = Utils.getInput();
 		}
-		LOGGER.info("Please enter a email");
-		String email = Utils.getInput();
-		while(!email.contains("@") || email.indexOf('@')<1) {
-			LOGGER.info("Please enter your email");
-			email = Utils.getInput();
-		}
-		customerService.delete(new Customer(firstName, surname, email));
+	
+		customerService.delete(new Customer(firstName, surname));
 	}
 
 	@Override
@@ -115,13 +100,8 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 			LOGGER.info("Please enter the new or currently used surname for update");
 			currSurname  = Utils.getInput();
 		}
-		LOGGER.info("Please the currently used email");
-		String currEmail = Utils.getInput();
-		while(!currEmail.contains("@") || currEmail.indexOf('@')<1) {
-			LOGGER.info("Please enter your email");
-			currEmail = Utils.getInput();
-		}
-		long custId = getCustomerId.getCustomerId(new Customer(currFirstName, currSurname, currEmail));
+	
+		long custId = getCustomerId.getCustomerId(new Customer(currFirstName, currSurname));
 	  return custId;
 		
 	}
