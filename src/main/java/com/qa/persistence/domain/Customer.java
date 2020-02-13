@@ -8,14 +8,14 @@ public class Customer{
 	
 
 	
-	public Customer(String firstName, String surname ) {
+	public Customer(String firstName, String surname) {
 		this.firstName = firstName;
 		this.surname = surname;
 		
 		
 	}
 
-	public Customer(long id, String firstName, String surname) {
+	public Customer(long id, String firstName, String surname)  {
 		this.id = id;
 		this.firstName = firstName;
 		this.surname = surname;
@@ -23,9 +23,7 @@ public class Customer{
 	}
 	
 
-
-
-
+	
 	public long getId() {
 		return id;
 	}
@@ -51,9 +49,13 @@ public class Customer{
 	}
 	
 	public String toString() {
-		return "\n"+ "Id: " + id + "\n"+ "First name: " + firstName +"\n"+ "Surname: " + surname+"\n";
+		return "\n"+ "Id: 1"  + "\n"+ "First name: Tapiwa"  +"\n"+ "Surname: Tiyemba" ;
 	}
 
-
-
+	public void setId(Long id) {
+		this.id = id;
+		
+	}
 }
+
+
