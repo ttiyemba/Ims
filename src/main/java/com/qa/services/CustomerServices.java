@@ -30,11 +30,11 @@ public class CustomerServices implements CrudServices<Customer>, GetCustomerId<C
 	public void update(long id, Customer t) {
 		customerDao.update(id, t);
 	}
-	@Override
+	
 	public void delete(Customer t) {
 		customerDao.delete(t);
 	}
-	@Override
+	
 	public long getCustomerId(Customer t) {
 	
 		return customerDao.getCustomerId(t);

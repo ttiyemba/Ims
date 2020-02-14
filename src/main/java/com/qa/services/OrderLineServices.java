@@ -37,14 +37,14 @@ public class OrderLineServices implements CrudServices<OrderLine>,  GetOrderItem
 		
 	}
 
-	@Override
+	
 	public void delete(OrderLine t) {
 		
 		orderLineDao.delete(t);
 		
 	}
 
-	@Override
+	
 	public long getOrderIdForOrderLine(long custId, double price) {
 		
 		return orderLineDao.getOrderIdForOrderLine(custId, price);
