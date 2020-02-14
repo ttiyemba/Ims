@@ -38,4 +38,7 @@ Apache License, Version 2.0 (LICENSE-APACHE or http://www.apache.org/licenses/LI
 MIT license (LICENSE-MIT or http://opensource.org/licenses/MIT)
 Acknowledgments
 Taiwo
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1a4f508b36fccc76d4278567a66dd7ca783bb51
