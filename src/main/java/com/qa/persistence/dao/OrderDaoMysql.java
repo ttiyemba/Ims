@@ -256,6 +256,7 @@ public List<Order> orderDetailsDisplay(long id) {
 				double price = resultSet.getDouble("price");
 				Order order = new Order(idGet, custId, price);
 				orders.add(order);
+				connection.close();
 			}
 		} catch (Exception e) {
 			logger.error("error displaying the list of items");

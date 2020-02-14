@@ -21,6 +21,7 @@ public class ItemDaoMysql implements ItemDao<Item> {
 	 try {
 		 this.connection= DriverManager.getConnection("jdbc:mysql://35.228.215.111/IMS", Config.username, Config.password); 
 		 return "Connection passed";
+		 
 	 }catch(Exception e) {
 		 logger.error("Connection failed");
 		 return "Connection failed";
@@ -48,6 +49,7 @@ public class ItemDaoMysql implements ItemDao<Item> {
 				long quantity = (long) resultSet.getInt("quantity");
 				Item item = new Item(id, itemName, price, quantity);
 				items.add(item);
+				connection.close();
 			}
 		} catch (Exception e) {
 			logger.error("error displaying the list of items");
@@ -64,6 +66,7 @@ public class ItemDaoMysql implements ItemDao<Item> {
 			Statement statement = connection.createStatement();
 			statement.executeUpdate("insert into items(itemname, price, quantity) values('" + item.getName() + "','" + item.getPrice()+ "','"+ item.getQuantity()+ "')" );
 			logger.info("Item created");
+			connection.close();
 		} catch (Exception e) {
 			logger.error("error inserting the item details");
 		} 

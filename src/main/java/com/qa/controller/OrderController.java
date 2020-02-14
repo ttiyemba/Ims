@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import com.qa.persistence.domain.Customer;
@@ -82,7 +82,7 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 		try {
 			TimeUnit.SECONDS.sleep(25);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.WARN, "Interruopted",e);
 		}
 		DecimalFormat df = new DecimalFormat("0.00");      
 		double total = Double.parseDouble(df.format(totalPrice));

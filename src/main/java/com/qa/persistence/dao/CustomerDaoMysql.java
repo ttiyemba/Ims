@@ -47,11 +47,13 @@ public class CustomerDaoMysql implements Dao<Customer> {
 				Customer customer = new Customer(id, firstName, surname);
 				customers.add(customer);
 				statement.closeOnCompletion();
+				connection.close();
 			}
 		} catch (Exception e) {
 			logger.error("error displaying the list of customers");
 		}
 		return customers;
+		
 	}
 	/**
 	 * creates an customer
@@ -119,7 +121,7 @@ public long getCustomerId(Customer c) {
 			}
 			connection.close();
 	}catch(Exception e) {
-		 logger.error("Update failed");
+		 logger.info(e);
 		 
 	 }
 
@@ -139,7 +141,7 @@ public long getCustomerId(Customer c) {
 			logger.info("Delete complete");
 			connection.close();
 	}catch(Exception e) {
-		 logger.error("Delete failed");
+		 logger.info(e);;
 		 
 	 }
 	}

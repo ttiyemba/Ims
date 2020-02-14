@@ -49,6 +49,7 @@ public class OrderLineDaoMysql implements OrderLineDao<OrderLine>{
 					int quantity =  resultSet.getInt("quantity");
 				OrderLine orderLine = new OrderLine(id, orderId, itemId, quantity);
 					orderLineList.add(orderLine);
+					connection.close();
 				}
 			} catch (Exception e) {
 				logger.error("error displaying the list of items");
@@ -65,6 +66,7 @@ public class OrderLineDaoMysql implements OrderLineDao<OrderLine>{
 				Statement statement = connection.createStatement();
 				statement.executeUpdate("insert into orderline(orderId, itemId, itemquantity) values('" + t.getOrderId() + "','" +t.getItemId() + "','"+t.getQuantity()+ "')" );
 				logger.info("Orderline created");
+				connection.close();
 			} catch (Exception e) {
 				logger.error("error inserting to orderline table");
 			} 
