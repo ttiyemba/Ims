@@ -5,6 +5,12 @@ public class OrderLine {
 	private long orderId;
 	private long itemId;
 	private long quantity;
+	/**
+	 * Orderline Constructor
+	 * @param orderId
+	 * @param itemId
+	 * @param quantity
+	 */
 	public OrderLine(long orderId, long itemId, long quantity) {
 		this.orderId=orderId;
 		this.itemId=itemId;
@@ -15,6 +21,10 @@ public class OrderLine {
 		this.itemId=itemId;
 		this.quantity=quantity;
 	}
+	/**
+	 * 
+	 * @return orderline id
+	 */
 	public long getId() {
 		return id;
 	}
@@ -27,12 +37,20 @@ public class OrderLine {
 	public void setOrderId(long orderId) {
 		this.orderId = orderId;
 	}
+	/**
+	 * 
+	 * @return itemId
+	 */
 	public long getItemId() {
 		return itemId;
 	}
 	public void setItemId(long itemId) {
 		this.itemId = itemId;
 	}
+	/**
+	 * 
+	 * @return orderline quantity
+	 */
 	public long getQuantity() {
 		return quantity;
 	}

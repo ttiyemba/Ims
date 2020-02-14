@@ -18,18 +18,24 @@ public class OrderServices implements CrudServices<Order>, GetOrderDetails<Order
 		return orderDao.getOrderId(custId, price);
 	}
 
-	@Override
+	/**
+	 * list all order services
+	 */
 	public List<Order> readAll() {
 		return orderDao.readAll();
 	}
 
-	@Override
+	/**
+	 * create an order service
+	 */
 	public void create(Order t) {
 		orderDao.create(t);
 		
 	}
 
-	@Override
+	/**
+	 * update an order service
+	 */
 	public void update(long id, Order t) {
 		orderDao.update(id, t);
 		

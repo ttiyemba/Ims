@@ -32,7 +32,7 @@ public class Ims {
 		Config.username = Utils.getInput();
 		LOGGER.info("What is your password");
 		Config.password = Utils.getInput();
-		
+		 
 		boolean loop = true;
 		
 		while (loop) {

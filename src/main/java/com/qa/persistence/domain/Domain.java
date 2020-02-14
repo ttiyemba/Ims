@@ -18,11 +18,17 @@ public enum Domain {
 	private Domain(String description) {
 		this.description = description;
 	}
+	/**
+	 * 
+	 * @return domain description
+	 */
 	
 	public String description() {
 		return this.name() + ": " +this.description;
 	}
-	
+	/**
+	 * display domains
+	 */
 	public static void printDomains() {
 		for (Domain domain : Domain.values()) {
 			LOGGER.info(domain.description());

@@ -12,15 +12,21 @@ public class CustomerServices implements CrudServices<Customer>, GetCustomerId<C
 	public CustomerServices(Dao<Customer> customerDao) {
 		this.customerDao = customerDao;
 	}
-	@Override
+	/**
+	 * customer service
+	 */
 	public List<Customer> readAll() {
 		return customerDao.readAll();
 	}
-	@Override
+	/**
+	 * service to create a customer
+	 */
 	public void create(Customer customer) {
 		customerDao.create(customer);
 	}
-	@Override
+	/**
+	 * service to delete a customer
+	 */
 	public void update(long id, Customer t) {
 		customerDao.update(id, t);
 	}

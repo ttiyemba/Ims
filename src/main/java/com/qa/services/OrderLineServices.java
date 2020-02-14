@@ -12,35 +12,41 @@ public class OrderLineServices implements CrudServices<OrderLine>,  GetOrderItem
 		this.orderLineDao = orderLineDao;
 	}
 	
-	@Override
+	/**
+	 * orderline read all service
+	 */
 	public List<OrderLine> readAll() {
 		return orderLineDao.readAll(); 
 	}
 
-	@Override
+	/**
+	 * orderLine create service
+	 */
 	public void create(OrderLine t) {
-		// TODO Auto-generated method stub
+		
 		orderLineDao.create(t);
 		
 	}
 
-	@Override
+	/**
+	 * orderline update service
+	 */
 	public void update(long id, OrderLine t) {
-		// TODO Auto-generated method stub
+		
 		orderLineDao.update(id, t);
 		
 	}
 
 	@Override
 	public void delete(OrderLine t) {
-		// TODO Auto-generated method stub
+		
 		orderLineDao.delete(t);
 		
 	}
 
 	@Override
 	public long getOrderIdForOrderLine(long custId, double price) {
-		// TODO Auto-generated method stub
+		
 		return orderLineDao.getOrderIdForOrderLine(custId, price);
 		
 	}

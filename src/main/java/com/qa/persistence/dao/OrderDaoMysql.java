@@ -30,7 +30,9 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 		 return "Connection failed";
 	 }  
 	}
-	@Override
+	/**
+	 * returns all orders
+	 */
 	public List<Order> readAll() {
 		ArrayList<Order> orders = new ArrayList<Order>();
 		try{
@@ -50,7 +52,10 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 		}
 		return orders;
 	}
-
+	
+	/**
+	 * creates a order
+	 */
 	public void create(Order order) {
 		try{
 			databaseConnection();
@@ -67,7 +72,9 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 		
 		
 	}
-	@Override
+	/**
+	 * update a order
+	 */
 	public void delete(Order order) {
 		String sql = "DELETE FROM orders WHERE id= ?";
 		try {
@@ -84,7 +91,9 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 	}
 		
 	
-@Override 
+/**
+ * returns a list of items
+ */
   public List<Item> itemsDisplay () {
 	  ArrayList<Item> items = new ArrayList<Item>();
 		try{
@@ -105,7 +114,9 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 		return items;
 	  
   }
-@Override
+  /**
+   * returns item price
+   */
   public double itemsPrice(Item c) {
 	  String sql = "SELECT price from items where itemname =?";
 	  double price = (double)0;
@@ -130,7 +141,9 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 	 return price;
   }
 
-@Override
+/**
+ * returns the customerId
+ */
 public long getCustomerId(Customer v) {
 	String sql = "SELECT id from customers WHERE firstname= ? && surname= ? ";
 	long id =(long) 0;
@@ -159,7 +172,9 @@ public long getCustomerId(Customer v) {
 	logger.info("The customerid is "+id);
 	return id;
 }
-@Override
+/**
+ * return orderId
+ */
 public long getOrderId(long custId, double price) {
 	String sql = "SELECT id from orders WHERE custId= ? && price= ? ";
 	long id =(long) 0;
@@ -191,7 +206,9 @@ public long getOrderId(long custId, double price) {
 	return id;
 	
 }
-@Override
+/**
+ * returns item id
+ */
 public long getItemId(Item u) {
 	String sql = "SELECT id from items WHERE itemname= ?";
 	long id =(long) 0;
@@ -221,7 +238,9 @@ public long getItemId(Item u) {
 	logger.info("The itemid is "+id);
 	return id;
 }
-@Override
+/**
+ * displays order details
+ */
 public List<Order> orderDetailsDisplay(long id) {
 	 ArrayList<Order> orders = new ArrayList<Order>();
 		try {

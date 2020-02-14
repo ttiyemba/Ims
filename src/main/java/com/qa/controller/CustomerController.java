@@ -53,20 +53,20 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 	 * update a customer 
 	 */
 	public void update() {
-		LOGGER.info("Hi,  it seems you want to change some details, please follow the steps below");
+		LOGGER.info("To update customer details, please follow the steps below");
 		long custId = getCustomerId();
 		if(custId!=0) {
 			LOGGER.info("Please enter the new details");
-			LOGGER.info("Please enter the new or currently used first name for update");
+			LOGGER.info("Please enter the  first name for update");
 			String newOrCurrFirstName = Utils.getInput();
 			while(newOrCurrFirstName.matches(".*\\d.*")) {
 				LOGGER.info("Please enter a first name");
 				newOrCurrFirstName = Utils.getInput();
 			}
-			LOGGER.info("Please enter the new or currently used surname for update");
+			LOGGER.info("Please enter the  surname for update");
 			String newOrCurrSurname = Utils.getInput();
 			while(newOrCurrSurname .matches(".*\\d.*")) {
-				LOGGER.info("Please enter the new or currently used surname for update");
+				LOGGER.info("Please enter the  surname for update");
 				newOrCurrSurname  = Utils.getInput();
 			}
 			
@@ -114,7 +114,7 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		}
 	
 		long custId = getCustomerId.getCustomerId(new Customer(currFirstName, currSurname));
-	  return custId;
+	  return custId; 
 		
 	}
 	

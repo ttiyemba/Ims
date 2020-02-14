@@ -31,8 +31,9 @@ public class CustomerDaoMysql implements Dao<Customer> {
 	}
 		
 
-	
-	@Override
+	/**
+	 * reads all customers
+	 */
 	public List<Customer> readAll() {
 		ArrayList<Customer> customers = new ArrayList<Customer>();
 		try  {
@@ -52,7 +53,9 @@ public class CustomerDaoMysql implements Dao<Customer> {
 		}
 		return customers;
 	}
-	@Override
+	/**
+	 * creates an customer
+	 */
 	public void create(Customer customer) {
 		try{
 			databaseConnection();
@@ -64,7 +67,9 @@ public class CustomerDaoMysql implements Dao<Customer> {
 			logger.error("error inserting the customer details");
 		} 
 	}
-	@Override
+	/**
+	 * gets the customer id
+	 */
 public long getCustomerId(Customer c) {
 	String sql = "SELECT id from customers WHERE firstname= ? && surname= ? ";
 	long id =(long) 0;
@@ -95,7 +100,9 @@ public long getCustomerId(Customer c) {
 	logger.info("The customerid is "+id);
 	return id;
 }
-	@Override
+	/**
+	 * updates a customer
+	 */
 	public void update(long id, Customer customer) {
 		int custId = (int)id;
 		String sql = "UPDATE customers SET firstname= ?, surname= ? WHERE id=" + custId  ;
@@ -117,7 +124,9 @@ public long getCustomerId(Customer c) {
 	 }
 
 	}
-	@Override
+	/**
+	 * deletes a customer
+	 */
 	public void delete(Customer customer) {
 		
 		String sql = "DELETE FROM customers WHERE firstname= ? && surname= ? ";

@@ -30,6 +30,10 @@ public class ItemDaoMysql implements ItemDao<Item> {
 		
 		
 	}
+	
+	/**
+	 * returns all items
+	 */
 
 	public List<Item> readAll() {
 		ArrayList<Item> items = new ArrayList<Item>();
@@ -50,7 +54,10 @@ public class ItemDaoMysql implements ItemDao<Item> {
 		}
 		return items;
 	}
-
+	
+	/**
+	 * creates an item
+	 */
 	public void create(Item item) {
 		try{
 			databaseConnection();
@@ -61,6 +68,9 @@ public class ItemDaoMysql implements ItemDao<Item> {
 			logger.error("error inserting the item details");
 		} 
 	}
+	/**
+	 * returns the itemId
+	 */
 public long getItemId(Item c) {
 	String sql = "SELECT id from items WHERE itemname= ?";
 	long id =(long) 0;
@@ -90,6 +100,9 @@ public long getItemId(Item c) {
 	logger.info("The itemid is "+id);
 	return id;
 }
+	/**
+	 * update an item
+	 */
 	public void update(long id, Item item) {
 		int itemId = (int)id;
 		
@@ -114,6 +127,10 @@ public long getItemId(Item c) {
 		
 
 	}
+	
+	/**
+	 * update an item
+	 */
 
 	public void delete(Item item) {
 		

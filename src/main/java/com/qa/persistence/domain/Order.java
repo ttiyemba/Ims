@@ -28,19 +28,30 @@ public class Order {
 		this.custId=custId;
 	}
 
-    
+    /**
+     *  
+     * @return order id
+     */
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
+	/**
+	 * 
+	 * @return order price
+	 */
 	public double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	/**
+	 * 
+	 * @return customerId
+	 */
 	public long getCustId() {
 		return custId;
 	}
@@ -53,6 +64,10 @@ public class Order {
 	public long getItemId() {
 		return itemId;
 	}
+	/**
+	 * sets itemId
+	 * @param itemId
+	 */
 	public void setItemId(long itemId) {
 		this.itemId = itemId;
 	}

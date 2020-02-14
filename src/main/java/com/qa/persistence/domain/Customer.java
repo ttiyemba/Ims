@@ -14,6 +14,13 @@ public class Customer{
 		
 		
 	}
+	
+	/**
+	 * Construtor to create a customer
+	 * @param id
+	 * @param firstName
+	 * @param surname
+	 */
 
 	public Customer(long id, String firstName, String surname)  {
 		this.id = id;
@@ -28,10 +35,17 @@ public class Customer{
 		
 	}
 
+	/**
+	 * 
+	 * @return id
+	 */
 	public long getId() {
 		return id;
 	}
-
+	/**
+	 * set id
+	 * @param id
+	 */
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -43,11 +57,18 @@ public class Customer{
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
+	/**
+	 * 
+	 * @return surname
+	 */
 	public String getSurname() {
 		return surname;
 	}
-
+	
+	/**
+	 * sets surname
+	 * @param surname
+	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}

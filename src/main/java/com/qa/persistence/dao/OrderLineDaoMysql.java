@@ -32,6 +32,9 @@ public class OrderLineDaoMysql implements OrderLineDao<OrderLine>{
 			
 			
 		}
+		/**
+		 * returns all orderline
+		 */
 
 		public List<OrderLine> readAll() {
 			ArrayList<OrderLine> orderLineList = new ArrayList<OrderLine>();
@@ -52,6 +55,9 @@ public class OrderLineDaoMysql implements OrderLineDao<OrderLine>{
 			}
 			return orderLineList;
 		}
+		/**
+		 * creates an orderline
+		 */
 
 		public void create(OrderLine t) {
 			try{
@@ -66,19 +72,25 @@ public class OrderLineDaoMysql implements OrderLineDao<OrderLine>{
 
 	
 
-		@Override
+		/**
+		 * updates order line
+		 */
 		public void update(long id, OrderLine t) {
 			
 			
 		}
 
-		@Override
+		/**
+		 * delete an order line
+		 */
 		public void delete(OrderLine t) {
 			
 			
 		}
 
-		@Override
+		/**
+		 * return orderid
+		 */
 		public long getOrderIdForOrderLine(long custId, double price) {
 			
 			return 0;
