@@ -18,7 +18,7 @@ public class CustomerServiceTest {
 	@InjectMocks
 	private CustomerServices customerServices;
 	
-	Customer customer = new Customer(1, "Tapiwa", "Tiyemba");
+	Customer customer = new Customer();
 	
 	@Test
 	public void customerServicesCreate() {
