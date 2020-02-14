@@ -127,7 +127,7 @@ public long getCustomerId(Customer c) {
 			stmt.setString(1, customer.getFirstName());
 			stmt.setString(2, customer.getSurname());
 			stmt.execute();
-			logger.error("Delete complete");
+			logger.info("Delete complete");
 			connection.close();
 	}catch(Exception e) {
 		 logger.error("Delete failed");

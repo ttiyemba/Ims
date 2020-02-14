@@ -19,14 +19,19 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		this.getCustomerId = getCustomerId;
 		
 	}
-	@Override
+	/**
+	 * returns a list of customers from the database
+	 */
 	public void readAll() {
 		for(Customer customer: customerService.readAll()) {
 			LOGGER.info(customer.toString());
 		}
 	}
-	@Override
-
+	
+	
+	/**
+	 * creates a customer
+	 */
 	public void create() {
 		LOGGER.info("Please enter a first name");
 		String firstName = Utils.getInput();
@@ -44,7 +49,9 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		customerService.create(new Customer(firstName, surname));
 		
 	}
-	@Override
+	/**
+	 * update a customer 
+	 */
 	public void update() {
 		LOGGER.info("Hi,  it seems you want to change some details, please follow the steps below");
 		long custId = getCustomerId();
@@ -67,7 +74,10 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		}
 	
 	}
-	@Override
+	
+	/**
+	 * deletes a customer
+	 */
 	public void delete() {
 		LOGGER.info("Please enter a first name");
 		String firstName = Utils.getInput();
@@ -85,7 +95,9 @@ public class CustomerController implements CrudController<Customer>, GetCustomer
 		customerService.delete(new Customer(firstName, surname));
 	}
 
-	@Override
+	/**
+	 * return a customerid
+	 */
 	public long getCustomerId() {
 		
 		LOGGER.info("Please enter the currently used first name");

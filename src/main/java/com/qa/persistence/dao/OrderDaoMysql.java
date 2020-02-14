@@ -78,7 +78,7 @@ public class OrderDaoMysql implements OrderDao<Order,Item,Customer> {
 			System.out.println("Delete complete ");
 			connection.close();
 	}catch(Exception e) {
-		 logger.error("Delete failed");
+		 logger.info(e);
 		 
 	 }
 	}

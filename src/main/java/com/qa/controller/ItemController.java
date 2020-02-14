@@ -15,17 +15,24 @@ public class ItemController implements CrudController<Item>, GetItemIdController
 	private CrudServices<Item> itemService;
 	private GetItemId<Item> getItemId;
 	
+	
 	public ItemController(CrudServices<Item> itemService,GetItemId<Item> getItemId ) {
 		this.itemService = itemService;
 		this.getItemId=getItemId;
 	}
 	
+	/**
+	 * returns list of customers
+	 */
 	public void readAll() {
 		for(Item item: itemService.readAll()) {
 			LOGGER.info(item.toString());
 		}
 	}
-
+	
+	/**
+	 * create a new item
+	 */
 	public void create() {
 		LOGGER.info("Please enter item name");
 		String itemName = Utils.getInput(); 
@@ -51,6 +58,9 @@ public class ItemController implements CrudController<Item>, GetItemIdController
 		itemService.create(new Item(itemName,itemPrice,itemQuantity));
 		
 	}
+	/**
+	 * updates a item
+	 */
 
 	public void update() {
 		LOGGER.info("Hi, it seems you want to change some details, please follow the steps below");
@@ -81,6 +91,10 @@ public class ItemController implements CrudController<Item>, GetItemIdController
 		itemService.update(itemId, new Item(itemName,itemPrice,itemQuantity));
 		}
 	}
+	
+	/**
+	 * delete an item
+	 */
 
 	public void delete() {
 		LOGGER.info("Please enter the item name");
@@ -91,6 +105,10 @@ public class ItemController implements CrudController<Item>, GetItemIdController
 		}
 		itemService.delete(new Item(name));
 	}
+	
+	/**
+	 * returns a item id
+	 */
 	
 	public long getItemId() {
 		LOGGER.info("Please enter the name");

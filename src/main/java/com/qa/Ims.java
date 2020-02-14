@@ -26,22 +26,27 @@ import com.qa.utils.Utils;
 public class Ims {
 	
 	public static final Logger LOGGER = Logger.getLogger(Ims.class);
-
+ 
 	public void imsSystem() {
 		LOGGER.info("What is your username");
 		Config.username = Utils.getInput();
 		LOGGER.info("What is your password");
 		Config.password = Utils.getInput();
 		
+		boolean loop = true;
+		
+		while (loop) {
 		LOGGER.info("Which entity would you like to use?");
 		Domain.printDomains();
 		
 		Domain domain = Domain.getDomain();
+		Action action = null;
+		if (domain != Domain.STOP) {
 		LOGGER.info("What would you like to do with " + domain.name().toLowerCase() + ":");
 
 		Action.printActions();
-		Action action = Action.getAction();
-		
+		action = Action.getAction();
+		}
 		switch (domain) {
 		case CUSTOMER:
 			CustomerController customerController = new CustomerController(new CustomerServices(new CustomerDaoMysql()), new CustomerServices(new CustomerDaoMysql()));
@@ -57,6 +62,8 @@ public class Ims {
 			break;
 		case STOP:
 			break;
+		}
+		
 		}
 		
 	}

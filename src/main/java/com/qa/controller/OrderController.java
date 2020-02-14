@@ -36,7 +36,9 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 		this.getOrderDetails = getOrderDetails;
 		this.orderLineService= orderLineService;
 	}
-	@Override
+	/**
+	 * returns all orders
+	 */
 	public void readAll() {
 		for(Order order: orderService.readAll()) {
 			LOGGER.info(order.toString());
@@ -45,7 +47,9 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 	}
 	
 
-	@Override
+	/**
+	 * creates a order
+	 */
 	public void create() {
 		ArrayList<Long> idList = new ArrayList<Long>();
 		ArrayList<Integer> quantityList = new ArrayList<Integer>();
@@ -96,13 +100,17 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 		}
 	}
 
-	@Override
+	/**
+	 * update a order
+	 */
 	public void update() {
 		readAllOrderLine();		
 		
 	}
 
-	@Override
+	/**
+	 * deletes a order
+	 */
 	public void delete() {
 		long custId= getCustomerId();
 		
@@ -120,7 +128,9 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 		}
 			
 	}
-	@Override
+	/**
+	 * returns customerid
+	 */
 	public long getCustomerId() {
 		// TODO Auto-generated method stub
 				LOGGER.info("Please enter your first name");
@@ -139,20 +149,26 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 				long custId = getCustomerId.getCustomerId(new Customer(firstName, surname));
 			  return custId;
 	}
-	@Override
+	/**
+	 * returns orderid
+	 */
 	public long getOrderId(long custId, double price) {
 		long  orderId =  getOrderDetails.getOrderId(custId, price);
 		// TODO Auto-generated method stub
 		return orderId;
 	}
-	@Override
+	/**
+	 * returns itemid
+	 */
 	public long getItemId() {
 		
 		long itemId = getItemId.getItemId(new Item(itemName));
 	  return itemId;
 		
 	}
-	@Override
+	/**
+	 * displays all items
+	 */
 	public void itemsDisplay() {
 		for(Item item: getOrderDetails.itemsDisplay()) {
 			LOGGER.info(item.toString());
@@ -162,32 +178,41 @@ public class OrderController implements CrudController<Order>,GetItemListControl
 	}
 
 
-	@Override
+	/**
+	 * returns order details
+	 * 
+	 */
 	public List<Order> orderDetailsDisplay(long id) {
 		List<Order> orders = new ArrayList<Order>();
 		orders = getOrderDetails.orderDetailsDisplay(id);
 		return orders;
 	}
-	@Override
+	/**
+	 * displays orderline 
+	 */
 	public void readAllOrderLine() {
 		// TODO Auto-generated method stub
 		for(OrderLine orderLine: orderLineService.readAll()) {
 			LOGGER.info(orderLine.toString());
 			}
 	}
-	@Override
+	/**
+	 * creates orderline
+	 */
 	public void orderLineCreate(long orderId, long itemId, int quantity) {
 		// TODO Auto-generated method stub
 		orderLineService.create(new OrderLine(orderId,itemId,quantity));
 	}
-	@Override
+	
 	public void orderLineUpdate() {
-		// TODO Auto-generated method stub
+		
 		
 	}
-	@Override
+	/**
+	 * delete orderline
+	 */
 	public void orderLineDelete() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

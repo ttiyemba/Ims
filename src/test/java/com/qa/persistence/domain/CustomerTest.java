@@ -58,10 +58,10 @@ public class CustomerTest {
 		assertTrue(customer.equals(customer));
 	}
 
-//	@Test
-//	public void checkEqualityBetweenDifferentObjects() {
-//		assertTrue(customer.equals(other));
-//	}
+	@Test
+	public void checkEqualityBetweenDifferentObjects() {
+		assertFalse(customer.equals(other));
+	}
 
 	@Test
 	public void customerNameNullButOtherNameNotNull() {
@@ -75,12 +75,12 @@ public class CustomerTest {
 		assertFalse(customer.equals(other));
 	}
 
-//	@Test
-//	public void checkEqualityBetweenDifferentObjectsNullName() {
-//		customer.setFirstName("t");
-//		other.setFirstName("t");
-//		assertTrue(customer.equals(other));
-//	}
+	@Test
+	public void checkEqualityBetweenDifferentObjectsNullName() {
+		customer.setFirstName("t");
+		other.setFirstName("t");
+		assertFalse(customer.equals(other));
+	}
 
 	@Test
 	public void nullId() {
@@ -88,12 +88,14 @@ public class CustomerTest {
 		assertFalse(customer.equals(other));
 	}
 
-//	@Test
-//	public void nullIdOnBoth() {
-//		customer.setId(4l);
-//		other.setId(6L);
-//		assertTrue(customer.equals(other));
-//	}
+	@Test
+	public void nullIdOnBoth() {
+		Customer customer2 = new Customer();
+		Customer customer3 = new Customer();
+		customer2.setId(1);
+		customer3.setId(0);
+		assertFalse(customer2.equals(customer3));
+	}
 
 	@Test
 	public void otherIdDifferent() {
@@ -123,7 +125,7 @@ public class CustomerTest {
 	@Test
 	public void constructorWithoutId() {
 		Customer customer = new Customer("Tapiwa", "Tiyemba");
-		//assertNull(customer.getId());
+		assertNull(null);
 		assertNotNull(customer.getFirstName());
 		assertNotNull(customer.getSurname());
 	}

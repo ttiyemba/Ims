@@ -24,6 +24,10 @@ public class Customer{
 	
 
 	
+	public Customer() {
+		
+	}
+
 	public long getId() {
 		return id;
 	}
