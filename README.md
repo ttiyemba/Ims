@@ -1,8 +1,8 @@
-Inventory-management-system
+# Inventory-management-system
 
 This project is to create an application for an inventory management managament system that an end user can interact with via Command line interface. This project has CRUD functionality for Users,Items and Orders
 
-#Prequisites
+# Prequisites
 
 To create this system
 - Dowload an integrated development environment. The one used for this project is Eclipse - (https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html)
@@ -24,7 +24,7 @@ After setting up, follow these steps:
 3)Run the Application to add update delete and read customers and items from your database.
 
 
-#Installation
+# Installation
 
 Install Eclipse -Ensure that when java is being installed you download both jdk and jre (mainly jdk).
 
@@ -42,11 +42,11 @@ Install Eclipse -Ensure that when java is being installed you download both jdk 
 
 -Ensure that all relevant JDBC drivers are installed and contain your database name and GCP instance ip address.
 
-#Authors
+# Authors
 * **Christopher Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 * **Tapiwa Tiyemba** - *Main body of work*- [ttiyemba](https://github.com/ttiyemba)
 
-##SonarQube Code Quality
+# SonarQube Code Quality
 
 ![Image description](http://35.189.123.196/sonarqube/dashboard?id=com.qa.ims%3Atapiwa-ims)
 
