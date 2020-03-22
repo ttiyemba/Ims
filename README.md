@@ -5,7 +5,8 @@ This project is to create an application for an inventory management managament 
 # Prequisites
 
 To create this system
-- Dowload an integrated development environment. The one used for this project is Eclipse - (https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html)
+
+-Dowload an integrated development environment. The one used for this project is Eclipse - (https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html)
 
 -Download Java which is used to craete the source code - (https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html)
 
